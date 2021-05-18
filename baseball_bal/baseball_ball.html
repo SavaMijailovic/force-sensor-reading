@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <title>Baseball ball</title>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="./baseball_ball.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+        
+        <div id="inputs">
+            <div class="input">
+                <input type="button" value="Start" id="play">
+                <br>
+            </div>
+
+            <div class="input">
+                <label for="angle">Angle:</label>
+                <input type="number" value="45" id="angle" max="90" min="0"><span></span>
+            </div>
+
+            <div class="input">
+                <input type="file" name="inputfile" id="inputfile">
+            </div>
+
+
+            <div id="error">Bad file</div>
+        </div>
+        
+        <div id="background">
+            <img src="ball.jpg" alt="ball" width="30" height="30" id="ball">
+            <div id="holder"></div>
+        </div>
+    </div>
+
+    <script src="./baseball_ball.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+* {
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+.input {
+    margin-left: 10px;
+}
+
+#angle {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+#play {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#inputfile {
+    margin-bottom: 20px;
+}
+
+#inputs {
+    background-color: lightblue;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 300px;
+    overflow: hidden;
+    border: 3px solid black;
+}
+
+#background {
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    background-image: url('./bg.jpg');
+    background-size: cover;
+    border: 3px solid black;
+    width: 960px;
+    height: 540px;
+}
+
+#ball {
+    /* width: 30px; */
+    /* height: 30px; */
+    border-radius: 50%;
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+}
+
+#holder {
+    height: 50px;
+    width: 6px;
+    background-color: black;
+    position: absolute;
+    bottom: 10px;
+    left: 52px; /* 40 + 30/2 - 6/2 */
+} 
+
+#error {
+    padding: 10px 0px 10px 0px;
+    color: red;
+    text-align: center;
+    font-size: 16px;
+    visibility: hidden;
+}

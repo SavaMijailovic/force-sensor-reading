@@ -1,14 +1,29 @@
-# Seminarski rad iz osnovi mehanike
+# Seminarski rad iz osnova mehanike
 
 _Zadatak preuzet iz knjige: Elementary Mechanics Using Python, Anders Malthe-Sørenssen._
 
 ### Tekst zadatka
 
-Izmerena je sila kojom palica deluje na lopticu pri udarcu (izmerene vrednosti
-su prikazane u datoteci _baseballforce.d_). 
-Loptica je mase _m = 0.145kg_.
+Ocitavanja senzora sile. Izmerena je sila kojom palica deluje na lopticu pri udarcu (izmerene vrednosti
+su prikazane u datoteci _baseballforce.d_). Loptica je mase _m = 0.145kg_.
 
 1. Nacrtati shemu sila koje deluju na ovu lopticu.
 2. Naći ubrzanje loptice u funkciji vremena.
 3. Naći brzinu loptice u funkciji vremena.
 4. Koja je brzina loptice u trenutku kada napusti palicu?
+
+# Seminar paper on the basics of mechanics
+
+_Task taken from the book: Elementary mechanics using Python, Anders Malthe-Sørenssen._
+
+### Task text
+
+Force sensor reading. A small force sensor has been fitted on the surface of a
+baseball, measuring the force from the bat on the ball. 
+The recorded force is shown in the file _baseballforce.d_. 
+The mass of the baseball is _m = 0.145kg_.
+
+1. Draw a free-body diagram of the baseball.
+2. Find the acceleration of the baseball as a function of time.
+3. Find the velocity of the baseball as a function of time.
+4. What is the velocity of the baseball as it leaves the bat?

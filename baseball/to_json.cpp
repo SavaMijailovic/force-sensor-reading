@@ -9,7 +9,7 @@ int main() {
     json << "[\n";
     string t, f;
     while (d >> t >> f) {
-        json << "[" << t << ", " << f << "],\n";
+        json << "\t[" << t << ", " << f << "],\n";
     }
     json << "]\n";
     d.close();

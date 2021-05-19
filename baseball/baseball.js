@@ -3,12 +3,12 @@ xhr.open('GET', 'http://alas.math.rs/~mi19168/baseball/baseballforce.json');
 xhr.addEventListener('readystatechange', function () {
     if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
         DATA = JSON.parse(xhr.response);
-        console.log(DATA);
+        setData();
     }
 });
 xhr.send();
 
-let DATA;
+let DATA = [];
 let F = [];
 let T = [];
 let R = [];
@@ -33,8 +33,6 @@ const starty = 60;
 
 let x = startx;
 let y = starty;
-
-let fileChosen = false;
 
 const ball = document.getElementById('ball');
 
@@ -85,12 +83,12 @@ function move() {
 }
 
 function main() {
-    setData();
 
     const inputfile = document.getElementById('inputfile');
     if (inputfile != null) {
         inputfile.addEventListener('input', function () {
-            fileChosen = false;
+            setData();
+            checkFileInput();
             const fr = new FileReader();
             fr.addEventListener('load', function () {
                 parseFile(fr.result);
@@ -113,8 +111,7 @@ function main() {
     const start = document.getElementById('start');
     if (start == null) return;
     start.addEventListener('click', function () {
-        checkFileInput();
-        if (fileChosen && this.value != 'Reset') {
+        if (this.value != 'Reset') {
             this.value = 'Reset';
             hit(angle.value);
         }
@@ -136,13 +133,11 @@ function main() {
 function checkFileInput() {
     const err = document.getElementById('error');
     if (err != null) {
-        if (fileChosen) {
+        if (F.length > 0 && F.length == T.length) {
             err.style.visibility = 'hidden';
         } else {
             err.style.visibility = 'visible';
-            if (F.length == 0 || T.length == 0) {
-                setData();
-            }
+            setData();
         }
     }
 }
@@ -163,7 +158,6 @@ function parseFile(result) {
             time = !time;
         }
     }
-    fileChosen = F.length > 0 && F.length == T.length;
     checkFileInput();
 }
 

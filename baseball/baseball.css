@@ -16,7 +16,7 @@ body {
     margin-bottom: 10px;
 }
 
-#play {
+#start {
     display: block;
     margin: auto;
     width: 100px;
@@ -43,7 +43,7 @@ body {
     position: absolute;
     top: 100px;
     left: 400px;
-    background-image: url('./bg.jpg');
+    background-image: url('./background.jpg');
     background-size: cover;
     border: 3px solid black;
     width: 960px;

@@ -1,12 +1,32 @@
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://alas.math.rs/~mi19168/baseball/baseballforce.json');
+xhr.addEventListener('readystatechange', function () {
+    if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+        DATA = JSON.parse(xhr.response);
+        console.log(DATA);
+    }
+});
+xhr.send();
+
+let DATA;
 let F = [];
 let T = [];
 let R = [];
+
+function setData() {
+    F = [];
+    T = [];
+    for (const data of DATA) {
+        T.push(data[0]);
+        F.push(data[1]);
+    }
+}
 
 // const m = 0.0008;
 // const g = 400000; 
 
 const m = 0.00075;
-const g = 400000; 
+const g = 400000;
 
 const startx = 40;
 const starty = 60;
@@ -25,7 +45,7 @@ function hit(angle) {
     let r = [startx, starty], v = [0, 0], a = [0, 0];
     let counter = 0;
     let t = 0;
-    
+
     while (r[1] > 0) {
         if (counter < F.length) {
             const _a = F[counter] / m;
@@ -34,17 +54,16 @@ function hit(angle) {
         } else {
             a = [0, -g];
         }
-        
+
         v = [v[0] + a[0] * dt, v[1] + a[1] * dt];
         r = [r[0] + v[0] * dt, r[1] + v[1] * dt];
-        
+
         V.push(v);
         R.push(r)
         DT.push(t);
         t += dt;
         counter++;
     }
-    // console.log(R[78]);
     i = 0;
     interval = setInterval(move, dt);
 }
@@ -66,7 +85,8 @@ function move() {
 }
 
 function main() {
-    
+    setData();
+
     const inputfile = document.getElementById('inputfile');
     if (inputfile != null) {
         inputfile.addEventListener('input', function () {
@@ -80,7 +100,7 @@ function main() {
             }
         });
     }
-    
+
     const angle = document.getElementById('angle');
     if (angle == null) return;
     angle.onchange = function () {
@@ -89,14 +109,14 @@ function main() {
             angle.value = 45;
         }
     }
-    
-    const play = document.getElementById('play');
-    if (play == null) return;
-    play.addEventListener('click', function () {
+
+    const start = document.getElementById('start');
+    if (start == null) return;
+    start.addEventListener('click', function () {
         checkFileInput();
         if (fileChosen && this.value != 'Reset') {
             this.value = 'Reset';
-            hit(angle.value);     
+            hit(angle.value);
         }
         else {
             this.value = 'Start';
@@ -120,6 +140,9 @@ function checkFileInput() {
             err.style.visibility = 'hidden';
         } else {
             err.style.visibility = 'visible';
+            if (F.length == 0 || T.length == 0) {
+                setData();
+            }
         }
     }
 }

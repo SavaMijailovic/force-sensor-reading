@@ -36,3 +36,22 @@ The mass of the baseball is _m = 0.145kg_.
 The _baseball_ directory contains a program that describes the path of movement
 baseball using data from a given file, and data can also be loaded from a local computer. 
 You can watch the animation at the following [url](http://alas.math.rs/~mi19168/baseball).
+
+## :package: Installation
+:exclamation: Requirements: python (numpy, matplotlib)
+
+1. Clone repository somewhere on your machine
+
+    ```sh
+    git clone https://github.com/SavaMijailovic/force-sensor-reading.git
+
+    ```
+    ```sh
+    cd force-sensor-reading
+    ```
+2. Run script
+
+    ```sh
+    python3 main.py
+
+    ```

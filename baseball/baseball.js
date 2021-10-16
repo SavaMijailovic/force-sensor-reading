@@ -1,5 +1,5 @@
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://alas.math.rs/~mi19168/baseball/baseballforce.json');
+xhr.open('GET', 'http://alas.matf.bg.ac.rs/~mi19168/baseball/baseballforce.json');
 xhr.addEventListener('readystatechange', function () {
     if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
         DATA = JSON.parse(xhr.response);

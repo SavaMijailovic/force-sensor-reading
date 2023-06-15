@@ -14,7 +14,7 @@ su prikazane u fajlu _baseballforce.d_). Loptica je mase _m = 0.145kg_.
 
 U direktorijumu _baseball_ se nalazi program koji opisuje putanju kretanja
 loptice koristeći podatke iz datog fajla, a mogu se učitati i podaci sa lokalnog računara.
-Animaciju možete pogledati na sledećem [linku](http://alas.math.rs/~mi19168/baseball).
+Animaciju možete pogledati na sledećem [linku](http://alas.matf.bg.ac.rs/~mi19168/baseball/).
 
 
 # Seminar paper on the basics of mechanics
@@ -35,7 +35,7 @@ The mass of the baseball is _m = 0.145kg_.
 
 The _baseball_ directory contains a program that describes the path of movement
 baseball using data from a given file, and data can also be loaded from a local computer. 
-You can watch the animation at the following [url](http://alas.math.rs/~mi19168/baseball).
+You can watch the animation at the following [url](http://alas.matf.bg.ac.rs/~mi19168/baseball/).
 
 ## :package: Run
 :exclamation: Requirements: python (numpy, matplotlib)
